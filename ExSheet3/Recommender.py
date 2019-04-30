@@ -1,5 +1,6 @@
 
 import pandas as pd
+from _overlapped import NULL
 
 # get user id from console
 userID = input("Insert UserID: ")
@@ -16,11 +17,16 @@ my_user = user_group.get_group(int(userID))
 my_movie_ids = set(my_user['movieId'])
 my_movies = movies.loc[movies['movieId'].isin(my_movie_ids)]
 
- 
-print(my_user)
-print('-----------')
-print(type(my_movie_ids))
-print(my_movie_ids)
-print('-----------')
-print(my_movies)
+# merge user and his movies
+my_user_complete = pd.merge(my_user, my_movies, on="movieId")
+my_user_complete = my_user_complete.sort_values('ratings', ascending = False)
 
+
+
+i = 0
+while i < 20 and my_user_complete.iloc[i] != None:
+    print(my_user_complete.iloc[i])
+    i+=1
+    
+ 
+print(my_user_complete)
