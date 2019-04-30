@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 ratings = pd.read_csv('ratings_small.csv')
 movies = pd.read_csv('movies_metadata.csv', low_memory=False)
 user_group = ratings.groupby('userId')

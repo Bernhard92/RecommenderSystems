@@ -1,8 +1,8 @@
 import numpy
+
 import pandas as pd
 
 
-        
 def to_float(x): 
     try: 
         x = float(x) 

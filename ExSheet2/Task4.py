@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 df = pd.read_csv('ratings_small.csv')
 df_grouped = df.groupby('movieId')
 

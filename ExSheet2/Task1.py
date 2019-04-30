@@ -1,6 +1,7 @@
 
 import pandas as pd
 
+
 data = ['Toy Story', 'Jumanji', 'Grumpier Old Men']
         
 series = pd.Series(data)
